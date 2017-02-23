@@ -69,13 +69,12 @@ public class MPFR
 
     public enum mpfr_rnd_t
     {
+	MPFR_RNDNA,
 	MPFR_RNDN,
 	MPFR_RNDZ,
 	MPFR_RNDU,
 	MPFR_RNDD,
 	MPFR_RNDA,
-	MPFR_RNDF,
-	MPFR_RNDNA  // TODO map to -1
     }
 
     public static void init()
@@ -97,18 +96,14 @@ public class MPFR
     private static int mpfr_rnd_t_to_int(mpfr_rnd_t rnd)
     {
 	int v = rnd.ordinal();
-	return (v == 6 ? -1 : v);
+	return (v - 1);
     }
 
     private static mpfr_rnd_t[] mpfr_rnd_t_values = mpfr_rnd_t.values();
 
     private static mpfr_rnd_t int_to_mpfr_rnd_t(int val)
     {
-	if (val == -1) {
-	    return mpfr_rnd_t.MPFR_RNDNA;
-	} else {
-	    return mpfr_rnd_t_values[val];
-	}
+	return mpfr_rnd_t_values[val + 1];
     }
 
     public static void checkMPFRException()
