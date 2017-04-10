@@ -134,7 +134,7 @@ public class MPFR
      * String functions
      **********************************************************/
     private static native void native_mpfr_set_str(long x, String str, int base, int rnd);
-    public static void mpz_set_str(mpfr_t x, String str, int base, mpfr_rnd_t rnd)
+    public static void mpfr_set_str(mpfr_t x, String str, int base, mpfr_rnd_t rnd)
 	throws MPFRException
     {
 	native_mpfr_set_str(x.handle, str, base, mpfr_rnd_t_to_int(rnd));
