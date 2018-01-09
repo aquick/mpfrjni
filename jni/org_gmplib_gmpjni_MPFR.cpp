@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <errno.h>
+#include <malloc.h>
 #include "org_gmplib_gmpjni_MPFR.h"
 #include "org_gmplib_gmpjni_MPFR_MPFRException.h"
 #include "mpfr.h"

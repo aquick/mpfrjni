@@ -80,6 +80,7 @@ public class MPFR
     public static void init()
     {
 	Log.d( "mpfrjni", "loading native libs" );
+	System.loadLibrary("c++_shared");
 	System.loadLibrary("gmp");
 	System.loadLibrary("mpfr");
 	System.loadLibrary("mpfrjni");
